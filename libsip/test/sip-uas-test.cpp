@@ -14,7 +14,7 @@
 #include <stdint.h>
 
 #define NAME "34020000001320000001"
-#define DOMAIN "192.168.154.1"
+#define DOMAIN "192.168.33.1"
 
 struct sip_uas_test_t
 {
@@ -58,7 +58,7 @@ static void* sip_uas_oninvite(void* param, const struct sip_message_t* req, stru
 	{
 		sdp_t* sdp = sdp_parse((const char*)data);
 		sip_uas_add_header(t, "Content-Type", "application/sdp");
-		sip_uas_add_header(t, "Contact", "sip:34020000001320000001@192.168.154.1");
+		sip_uas_add_header(t, "Contact", "sip:34020000001320000001@192.168.33.1");
 		assert(0 == sip_uas_reply(t, 200, ack, strlen(ack)));
 		sdp_destroy(sdp);
 		return t;
@@ -108,7 +108,7 @@ static void sip_uas_loop(struct sip_uas_test_t *test)
 		memset(buffer, 0, sizeof(buffer));
 		test->addrlen = sizeof(test->addr);
 		int r = socket_recvfrom(test->udp, buffer, sizeof(buffer), 0, (struct sockaddr*)&test->addr, &test->addrlen);
-		printf("\n%s\n", buffer);
+		printf("recv: \n%s\n", buffer);
 
 		size_t n = r;
 		if (0 == http_parser_input(test->parser, buffer, &n))

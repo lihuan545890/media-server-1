@@ -78,7 +78,7 @@ int binnary_diff(const char* file1, const char* file2);
 
 int main(int argc, char* argv[])
 {
-	amf0_test();
+/*	amf0_test();
 	rtp_queue_test();
 	mpeg4_aac_test();
 	mpeg4_avc_test();
@@ -98,7 +98,7 @@ int main(int argc, char* argv[])
 	sip_header_test();
 	sip_uac_message_test();
 	sip_uas_message_test();
-	
+*/	
 	socket_init();
 
 	//mpeg_ts_dec_test("fileSequence0.ts");
@@ -145,10 +145,10 @@ int main(int argc, char* argv[])
 	//rtmp_server_forward_aio_test(NULL, 1935);
 
 	//sip_uac_test();
-	//sip_uas_test();
+	sip_uas_test();
 	//sip_uas_test2();
 	//sip_uac_test2();
-	//sip_agent_test();
+//	sip_agent_test();
 
 	socket_cleanup();
 	return 0;

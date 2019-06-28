@@ -38,4 +38,4 @@ clean:
 test:
 	$(MAKE) -C ../sdk
 	$(MAKE) -C test
-	ln -sf ../sdk/libaio/$(BUILD).$(PLATFORM)/libaio.so . &&  ./test/$(BUILD).$(PLATFORM)/test
+	ln -sf ../sdk/libaio/$(BUILD).$(PLATFORM)/libaio.so . 
